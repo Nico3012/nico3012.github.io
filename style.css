@@ -1,24 +1,24 @@
 :root {
-    --txtColor: #000000;
-    --bgColor: #ffffff;
-    --iptColor: #f7f7f7;
-    --bdrColor: #e7e7e7;
-    --btnColor: #ffc439;
+    --txtColor: #000000; /* text color (light theme) */
+    --bgColor: #ffffff; /* background color (light theme) */
+    --iptColor: #f7f7f7; /* input background color (light theme) */
+    --bdrColor: #e7e7e7; /* input border color (light theme) */
+    --btnColor: #ffc439; /* paypal button background color (light theme) */
 
-    --payColor: #003087;
-    --palColor: #009cde;
+    --payColor: #003087; /* paypal logo first part color (light theme) */
+    --palColor: #009cde; /* paypal logo second part color (light theme) */
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --txtColor: #dfdfdf;
-        --bgColor: #1f1f1f;
-        --iptColor: #171717;
-        --bdrColor: #2f2f2f;
-        --btnColor: #0070ba;
+        --txtColor: #dfdfdf; /* text color (dark theme) */
+        --bgColor: #1f1f1f; /* background color (dark theme) */
+        --iptColor: #171717; /* input background color (dark theme) */
+        --bdrColor: #2f2f2f; /* input border color (dark theme) */
+        --btnColor: #0070ba; /* paypal button background color (dark theme) */
 
-        --payColor: #dfdfdf;
-        --palColor: #dfdfdf;
+        --payColor: #dfdfdf; /* paypal logo first part color (dark theme) */
+        --palColor: #dfdfdf; /* paypal logo second part color (dark theme) */
     }
 }
 
