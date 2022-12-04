@@ -11,14 +11,14 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --txtColor: #dfdfdf; /* text color (dark theme) */
+        --txtColor: #ffffff; /* text color (dark theme) */
         --bgColor: #1f1f1f; /* background color (dark theme) */
         --iptColor: #171717; /* input background color (dark theme) */
         --bdrColor: #2f2f2f; /* input border color (dark theme) */
         --btnColor: #0070ba; /* paypal button background color (dark theme) */
 
-        --payColor: #dfdfdf; /* paypal logo first part color (dark theme) */
-        --palColor: #dfdfdf; /* paypal logo second part color (dark theme) */
+        --payColor: #ffffff; /* paypal logo first part color (dark theme) */
+        --palColor: #ffffff; /* paypal logo second part color (dark theme) */
     }
 }
 
