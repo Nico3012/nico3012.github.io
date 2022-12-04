@@ -4,12 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
+    <style>
+        body {
+            margin: 0;
+            display: grid;
+            grid-template-areas:
+                "a a"
+                "b c"
+                "d d";
+        }
+
+        #navbar {
+            grid-area: a;
+            background-color: red;
+        }
+
+        #privacy {
+            grid-area: b;
+            background-color: green;
+        }
+
+        #checkout {
+            grid-area: c;
+            background-color: yellow;
+        }
+
+        #footer {
+            grid-area: d;
+            background-color: blue;
+        }
+    </style>
 </head>
 <body>
     <div id="navbar">
         <div>Home</div>
         <div>Support</div>
     </div>
-    <div></div>
+    <div id="private"></div>
+    <div id="checkout"></div>
+    <div id="footer">
+        <div id="privacy">Datenschutz</div>
+        <div id="impress">Impressum</div>
+    </div>
 </body>
 </html>
