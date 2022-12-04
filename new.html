@@ -6,6 +6,7 @@
     <title>Checkout</title>
     <style>
         body {
+            height: 100%;
             margin: 0;
             display: flex;
             flex-direction: column;
@@ -14,10 +15,6 @@
         }
 
         #navbar {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
             height: 64px;
             display: flex;
             justify-content: space-around;
@@ -26,28 +23,22 @@
         }
 
         #private {
-            position: absolute;
-            left: 0;
-            top: 64px;
-            width: 50%;
-            height: calc(100% - 96px);
+            width: 2fr;
             background-color: green;
         }
 
         #checkout {
-            position: absolute;
-            right: 0;
-            top: 64px;
-            width: 50%;
-            height: calc(100% - 96px);
+            width: 1fr;
             background-color: yellow;
         }
 
+        #content {
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        }
+
         #footer {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
             height: 32px;
             display: flex;
             justify-content: space-between;
