@@ -5,32 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <style>
-        body {
-            margin: 0;
-            display: grid;
-            grid-template-areas:
-                "a a"
-                "b c"
-                "d d";
-        }
-
         #navbar {
-            grid-area: a;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 64px;
             background-color: red;
         }
 
         #private {
-            grid-area: b;
+            position: absolute;
+            left: 0;
+            top: 64px;
+            width: 50%;
+            height: calc(100% - 96px);
             background-color: green;
         }
 
         #checkout {
-            grid-area: c;
+            position: absolute;
+            right: 0;
+            top: 64px;
+            width: 50%;
+            height: calc(100% - 96px);
             background-color: yellow;
         }
 
         #footer {
-            grid-area: d;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 32px;
             background-color: blue;
         }
     </style>
