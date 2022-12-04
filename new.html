@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+            align-items: stretch;
+        }
+
         #navbar {
             position: absolute;
             left: 0;
@@ -12,7 +20,7 @@
             top: 0;
             height: 64px;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
             background-color: red;
         }
@@ -53,11 +61,13 @@
         <div>Home</div>
         <div>Support</div>
     </div>
-    <div id="private">
-        <div>Firstname Lastname</div>
-    </div>
-    <div id="checkout">
-        <div>Input</div>
+    <div id="content">
+        <div id="private">
+            <div>Firstname Lastname</div>
+        </div>
+        <div id="checkout">
+            <div>Input</div>
+        </div>
     </div>
     <div id="footer">
         <div id="privacy">Datenschutz</div>
