@@ -12,16 +12,15 @@
             margin: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: stretch;
         }
 
         #navbar {
-            height: 64px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+            flex-basis: 0;
             background-color: red;
+        }
+        
+        #content {
+            flex-basis: 100%;
         }
 
         #private {
@@ -32,17 +31,8 @@
             background-color: yellow;
         }
 
-        #content {
-            display: flex;
-            justify-content: stretch;
-            align-items: stretch;
-        }
-
         #footer {
-            height: 32px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-basis: 0;
             background-color: blue;
         }
     </style>
