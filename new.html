@@ -9,18 +9,23 @@
         span {
             font-family: sans-serif;
         }
+
         span.s18 {
             font-size: 18px;
         }
+
         span.s36 {
             font-size: 36px;
         }
+
         span.s72 {
             font-size: 72px;
         }
+
         span.bold {
             font-weight: bold;
         }
+
         span[ph]::before {
             content: attr(ph);
         }
@@ -89,19 +94,28 @@
             flex-grow: 5;
 
             display: flex;
-            flex-direction: column;
             justify-content: center;
+            align-items: center;
 
             padding: 8px;
-            max-width: 512px;
         }
 
-        #checkout span {
+        #input {
+            width: 0;
+            flex-grow: 1;
+            max-width: 512px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #input span {
             margin: 8px;
             text-align: center;
         }
 
-        #checkout div {
+        #input div {
             display: flex;
         }
 
@@ -110,7 +124,8 @@
             flex-grow: 1;
         }
 
-        input, select {
+        input,
+        select {
             appearance: none;
             margin: 8px;
             padding: 8px;
@@ -150,23 +165,23 @@
         <div id="content">
             <div id="private">
                 <span class="s72 bold">Firstname Name</span>
-                <span class="s18">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum necessitatibus non quaerat
-                    quisquam corrupti beatae sapiente facilis labore asperiores consectetur aperiam, distinctio ea
-                    praesentium consequatur impedit at ratione officiis aliquid obcaecati molestias dolor architecto? Ab
-                    accusamus vel autem non. Laudantium illo autem amet vitae distinctio atque dolore omnis!</span>
+                <span class="s18">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id nemo sit quis, numquam
+                    neque distinctio voluptas? Sapiente, exercitationem rerum distinctio sunt placeat eius iste.</span>
             </div>
             <form id="checkout" action="#">
-                <span class="s36">Checkout</span>
-                <div><input type="text"></div>
-                <div>
-                    <input type="number">
-                    <select>
-                        <option>Euro</option>
-                        <option>Dollar</option>
-                    </select>
+                <div id="input">
+                    <span class="s36">Checkout</span>
+                    <div><input type="text"></div>
+                    <div>
+                        <input type="number">
+                        <select>
+                            <option>Euro</option>
+                            <option>Dollar</option>
+                        </select>
+                    </div>
+                    <div><input type="number"></div>
+                    <div><input type="submit" value="PayPal"></div>
                 </div>
-                <div><input type="number"></div>
-                <div><input type="submit" value="PayPal"></div>
             </form>
         </div>
         <div id="footer">
