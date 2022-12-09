@@ -168,12 +168,12 @@
                 <span class="s18">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id nemo sit quis, numquam
                     neque distinctio voluptas? Sapiente, exercitationem rerum distinctio sunt placeat eius iste.</span>
             </div>
-            <form id="checkout" action="#">
+            <form id="checkout" action="#" method="get">
                 <div id="input">
                     <span class="s36">Checkout</span>
-                    <div><input type="text"></div>
+                    <div><input name="product" type="text"></div>
                     <div>
-                        <input type="number">
+                        <input type="number" name="quantity">
                         <select>
                             <option>Euro</option>
                             <option>Dollar</option>
@@ -189,11 +189,7 @@
             <span class="s18" ph="Impressum"></span>
         </div>
     </div>
-    <script>
-        const url = new URL(window.location.href);
-
-        document.querySelector('input').value = url.hash.slice(1);
-    </script>
+    <script>for (const i of new URL(window.location.href).searchParams) try { document.getElementsByName(i[0])[0].value = i[1]; } catch (e) { console.error(e); }</script>
 </body>
 
 </html>
