@@ -1,58 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <style>
-        body {
+        span {
+            font-family: sans-serif;
+        }
+        span.s18 {
+            font-size: 18px;
+        }
+        span.s36 {
+            font-size: 36px;
+        }
+        span.s72 {
+            font-size: 72px;
+        }
+        span.bold {
+            font-weight: bold;
+        }
+        span[ph]::before {
+            content: attr(ph);
+        }
+    </style>
+    <style>
+        #wrapper {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            margin: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+
             display: flex;
             flex-direction: column;
+            justify-content: center;
         }
 
         #navbar {
-            flex-basis: 0;
-            background-color: red;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px;
         }
-        
+
+        #logo {
+            margin: 8px;
+
+            font-size: 36px;
+        }
+
+        #support {
+            width: 96px;
+            margin: 8px;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+
+            background-color: blueviolet;
+        }
+
         #content {
-            flex-basis: 100%;
+            padding: 16px;
+            height: 0;
+            flex-grow: 1;
+
+            display: flex;
         }
 
         #private {
-            background-color: green;
+            width: 0;
+            flex-grow: 6;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: 8px;
+        }
+
+        #private span {
+            margin: 8px;
         }
 
         #checkout {
-            background-color: yellow;
+            width: 0;
+            flex-grow: 5;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: 8px;
+            max-width: 512px;
+        }
+
+        #checkout span {
+            margin: 8px;
+            text-align: center;
+        }
+
+        #checkout div {
+            display: flex;
+        }
+
+        input {
+            width: 0;
+            flex-grow: 1;
+        }
+
+        input, select {
+            appearance: none;
+            margin: 8px;
+            padding: 8px;
+            outline: none;
+            border: 2px solid black;
+            border-radius: 4px;
+
+            font-family: sans-serif;
+            font-weight: normal;
+            font-size: 18px;
         }
 
         #footer {
-            flex-basis: 0;
-            background-color: blue;
+            background-color: black;
+
+            padding: 24px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            color: white;
+        }
+
+        #footer span {
+            margin: 8px;
         }
     </style>
 </head>
+
 <body>
-    <div id="navbar">
-        <div>Home</div>
-        <div>Support</div>
-    </div>
-    <div id="content">
-        <div id="private">
-            <div>Firstname Lastname</div>
+    <div id="wrapper">
+        <div id="navbar">
+            <span id="logo" class="s36">Liquipay</span>
+            <span id="support" class="s18" ph="Support"></span>
         </div>
-        <div id="checkout">
-            <div>Input</div>
+        <div id="content">
+            <div id="private">
+                <span class="s72 bold">Firstname Name</span>
+                <span class="s18">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum necessitatibus non quaerat
+                    quisquam corrupti beatae sapiente facilis labore asperiores consectetur aperiam, distinctio ea
+                    praesentium consequatur impedit at ratione officiis aliquid obcaecati molestias dolor architecto? Ab
+                    accusamus vel autem non. Laudantium illo autem amet vitae distinctio atque dolore omnis!</span>
+            </div>
+            <form id="checkout" action="#">
+                <span class="s36">Checkout</span>
+                <div><input type="text"></div>
+                <div>
+                    <input type="number">
+                    <select>
+                        <option>Euro</option>
+                        <option>Dollar</option>
+                    </select>
+                </div>
+                <div><input type="number"></div>
+                <div><input type="submit" value="PayPal"></div>
+            </form>
         </div>
-    </div>
-    <div id="footer">
-        <div id="privacy">Datenschutz</div>
-        <div id="impress">Impressum</div>
+        <div id="footer">
+            <span class="s18" ph="Datenschutz"></span>
+            <span class="s18" ph="Impressum"></span>
+        </div>
     </div>
 </body>
+
 </html>
