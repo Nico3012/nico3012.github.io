@@ -189,6 +189,11 @@
             <span class="s18" ph="Impressum"></span>
         </div>
     </div>
+    <script>
+        const url = new URL(window.location.href);
+
+        document.querySelector('input').value = url.hash.slice(1);
+    </script>
 </body>
 
 </html>
