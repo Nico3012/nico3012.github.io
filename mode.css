@@ -1,7 +1,7 @@
 :root {
     --txtColor: #000000; /* text color (light theme) */
     --bgColor: #ffffff; /* background color (light theme) */
-    --iptColor: #f7f7f7; /* input background color (light theme) */
+    --iptColor: #eef2f5; /* input background color (light theme) */
     --bdrColor: #e7e7e7; /* input border color (light theme) */
     --btnColor: #ffc439; /* paypal button background color (light theme) */
 
@@ -12,7 +12,7 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --txtColor: #ffffff; /* text color (dark theme) */
-        --bgColor: #1f1f1f; /* background color (dark theme) */
+        --bgColor: #323233; /* background color (dark theme) */
         --iptColor: #171717; /* input background color (dark theme) */
         --bdrColor: #2f2f2f; /* input border color (dark theme) */
         --btnColor: #0070ba; /* paypal button background color (dark theme) */

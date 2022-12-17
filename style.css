@@ -1,8 +1,8 @@
 :root {
     --txtColor: #000000; /* text color (light theme) */
     --bgColor: #ffffff; /* background color (light theme) */
-    --iptColor: #f7f7f7; /* input background color (light theme) */
-    --bdrColor: #e7e7e7; /* input border color (light theme) */
+    --iptColor: #ffffff; /* input background color (light theme) */
+    --bdrColor: #DFE0E4; /* input border color (light theme) */
     --btnColor: #ffc439; /* paypal button background color (light theme) */
 
     --payColor: #003087; /* paypal logo first part color (light theme) */
@@ -42,7 +42,7 @@ select {
     margin: 8px;
     padding: 8px;
     outline: none;
-    border: 2px solid var(--bdrColor);
+    border: 1px solid var(--bdrColor);
     border-radius: 4px;
 
     font-family: sans-serif;
