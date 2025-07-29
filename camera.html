@@ -135,9 +135,18 @@
                 content: none;
             }
         }
+
+        #position-stats {
+            position: fixed;
+            right: 0;
+            top: 0;
+            background-color: white;
+            z-index: 100000;
+        }
     </style>
 </head>
 <body>
+<div id="position-stats"></div>
 <div id="container"></div>
 <div id="overlay">
     <button id="start_button">Start</button>
@@ -216,6 +225,12 @@
 
                     if( pose )
                     {
+                        const x = cameraPose[12];
+                        const y = cameraPose[13];
+                        const z = cameraPose[14];
+
+                        document.querySelector('#position-stats').innerHTML = `x: ${x.toFixed(2)}<br>y: ${y.toFixed(2)}<br>z: ${z.toFixed(2)}`;
+
                         view.updateCameraPose( pose );
                     }
                     else
