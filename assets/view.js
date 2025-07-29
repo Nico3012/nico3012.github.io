@@ -64,7 +64,7 @@ class ARCamIMUView
         this.renderer.setSize( width, height );
         this.renderer.setPixelRatio( window.devicePixelRatio );
 
-        this.camera = new THREE.PerspectiveCamera( 75, width / height, 0.01, 1000 );
+        this.camera = new THREE.PerspectiveCamera( 80, width / height, 0.01, 1000 );
 
         this.raycaster = new THREE.Raycaster();
 
