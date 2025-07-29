@@ -225,9 +225,9 @@
 
                     if( pose )
                     {
-                        const x = cameraPose[12];
-                        const y = cameraPose[13];
-                        const z = cameraPose[14];
+                        const x = pose[12];
+                        const y = pose[13];
+                        const z = pose[14];
 
                         document.querySelector('#position-stats').innerHTML = `x: ${x.toFixed(2)}<br>y: ${y.toFixed(2)}<br>z: ${z.toFixed(2)}`;
 
@@ -235,6 +235,8 @@
                     }
                     else
                     {
+                        document.querySelector('#position-stats').innerHTML = `x: Unknown<br>y: Unknown<br>z: Unknown`;
+
                         view.lostCamera();
 
                         const dots = alva.getFramePoints();
