@@ -42,7 +42,7 @@ if ('geolocation' in navigator) {
     },
     {
       enableHighAccuracy: true,
-      timeout: 5000,      // give up after 5 seconds
+      timeout: 10000,      // give up after 10 seconds
       maximumAge: 0       // do not use a cached position
     }
   );
