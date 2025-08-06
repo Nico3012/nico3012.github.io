@@ -12,29 +12,46 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
 
-// Geolocation: one-time position lookup
+// Geolocation: live position updates
+let marker = null;
+let accuracyCircle = null;
+
 if ('geolocation' in navigator) {
-  navigator.geolocation.getCurrentPosition(
+  navigator.geolocation.watchPosition(
     ({ coords }) => {
       const { latitude: lat, longitude: lon, accuracy } = coords;
 
-      // Center map and add a marker
-      map.setView([lat, lon], 15);
-      L.marker([lat, lon])
-        .addTo(map)
-        .bindPopup('You are here!')
-        .openPopup();
+      // Center map on first update
+      if (!marker) {
+        map.setView([lat, lon], 15);
+      }
 
-      // Draw accuracy circle
-      L.circle([lat, lon], {
-        radius: accuracy,        // radius in meters
-        color: '#136AEC',        // stroke color
-        fillColor: '#136AEC',    // fill color
-        fillOpacity: 0.2,        // semi-transparent fill
-        weight: 2                // stroke width
-      })
-        .addTo(map)
-        .bindPopup(`Accuracy: ${accuracy.toFixed(1)} m`);
+      // Update or create marker
+      if (marker) {
+        marker.setLatLng([lat, lon]);
+      } else {
+        marker = L.marker([lat, lon])
+          .addTo(map)
+          .bindPopup('You are here!')
+          .openPopup();
+      }
+
+      // Update or create accuracy circle
+      if (accuracyCircle) {
+        accuracyCircle.setLatLng([lat, lon]);
+        accuracyCircle.setRadius(accuracy);
+        accuracyCircle.setPopupContent(`Accuracy: ${accuracy.toFixed(1)} m`);
+      } else {
+        accuracyCircle = L.circle([lat, lon], {
+          radius: accuracy,
+          color: '#136AEC',
+          fillColor: '#136AEC',
+          fillOpacity: 0.2,
+          weight: 2
+        })
+          .addTo(map)
+          .bindPopup(`Accuracy: ${accuracy.toFixed(1)} m`);
+      }
     },
     (err) => {
       console.error('Geolocation error:', err);
@@ -42,8 +59,7 @@ if ('geolocation' in navigator) {
     },
     {
       enableHighAccuracy: true,
-      timeout: 10000,      // give up after 10 seconds
-      maximumAge: 0       // do not use a cached position
+      maximumAge: 0
     }
   );
 } else {
