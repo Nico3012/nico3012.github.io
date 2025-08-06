@@ -164,9 +164,11 @@
             video: {
                 facingMode: 'environment',
                 aspectRatio: 16 / 9,
-                width: { ideal: 1280 }
+                width: { ideal: 640 },
+                height: { ideal: 480 },
+                frameRate: { min: 60 },
             },
-            audio: false
+            audio: false,
         }
 
         const $container = document.getElementById( 'container' );
